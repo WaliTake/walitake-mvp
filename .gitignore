@@ -1,0 +1,77 @@
+# ---------------------------------------------------------------------------
+# Laravel 11 - .gitignore pensado para trabajo colaborativo
+# Lo que SÍ se commitea: código fuente, .env.example, composer.lock,
+# package-lock.json, y la estructura de carpetas vacías (storage/*).
+# Lo que se IGNORA: dependencias, artefactos de build, .env (credenciales),
+# cachés locales, archivos de IDE y archivos de sistema.
+# ---------------------------------------------------------------------------
+
+# Dependencias (se instalan con `composer install` / `npm install`)
+/vendor
+/node_modules
+
+# Build de Vite (se regenera con `npm run build` o `npm run dev`)
+/public/build
+/public/hot
+
+# Storage: contenido generado en runtime (las carpetas se trackean vía .gitkeep)
+/storage/*.key
+/storage/pail
+
+# Symlinks de almacenamiento público
+/public/storage
+
+# ----- Entorno (credenciales que NO se suben al repo) -----
+# El .env con credenciales reales se comparte por interno.
+# El .env.example SÍ se commitea como plantilla para el equipo.
+.env
+.env.backup
+.env.production
+.env.staging
+.env.local
+
+# Caché y métricas de PHPUnit / PHPActor
+.phpunit.cache
+.phpunit.result.cache
+.phpactor.json
+
+# Logs de Node
+npm-debug.log*
+yarn-error.log*
+
+# Credenciales de Composer
+/auth.json
+
+# ----- Herd (entorno Laravel en Windows) -----
+/.herd
+/.herd.pipe
+
+# ----- IDEs y editores -----
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# ----- Otros runtimes locales (Homestead/Valet) -----
+Homestead.json
+Homestead.yaml
+
+# ----- Archivos de sistema Windows -----
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.tmp
+
+# ----- macOS (por si alguien trabaja desde Mac) -----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ----- Linux -----
+*~
+.fuse_hidden*
